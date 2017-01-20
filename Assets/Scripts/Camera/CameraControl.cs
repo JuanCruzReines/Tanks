@@ -5,7 +5,7 @@ public class CameraControl : MonoBehaviour
     public float m_DampTime = 0.2f;                 
     public float m_ScreenEdgeBuffer = 4f;           
     public float m_MinSize = 6.5f;                  
-    [HideInInspector] public Transform[] m_Targets; 
+    /*[HideInInspector]*/ public Transform[] m_Targets; 
 
 
     private Camera m_Camera;                        
@@ -19,7 +19,7 @@ public class CameraControl : MonoBehaviour
         m_Camera = GetComponentInChildren<Camera>();
     }
 
-
+    //Se usa FixedUpdate para mantener la sincronía con el movimiento de los tanques aunque la camara no use fisica
     private void FixedUpdate()
     {
         Move();
